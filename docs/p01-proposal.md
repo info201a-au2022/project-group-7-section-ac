@@ -1,8 +1,39 @@
-# Title of your Project: Project Proposal 
+Earth and Food (Name of code)
+# Climate Change and Our Food (Title)
+#### Logan Winstel *your names here*
+#### INFO-201: Technical Foundations of Informatics - The Information School - University of Washington
+#### Autumn 2022
+## Abstract  
 
-**TODO**: Edit this file. Your project proposal goes here.
+## Keywords  
 
-For what to do, see the [`../instructions/`](../instructions/) directory, specifically: 
+## Introduction  
 
-* [Design Brief](../instructions/project-design-brief.pdf)
-* [Project Proposal Requirements](../instructions/p01-proposal-requirements.md)
+## Problem Domain (needs three citations and recommends a figure)
+#### Project Framing
+
+#### Human Values
+
+#### Direct and Indirect Stakeholders
+
+#### Possible Harms and Benefits  
+
+## Research Questions  
+
+## The Dataset  
+
+## Expected Limitations  
+
+## Limitations  
+
+## Findings  
+
+## Discussion  
+
+## Conclusion  
+
+## Acknowledgments  
+
+## References  
+
+## Questions
