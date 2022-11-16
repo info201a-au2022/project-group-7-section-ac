@@ -1,7 +1,7 @@
 ---
-title: "Your Project Title"
-author: "project team members"
-date: "1/22/2022"
+title: "Natural Disasters"
+author: "Darin Nguyen & Rohith Sarma"
+date: "11/15/2022"
 output: html_document
 ---
 
@@ -9,15 +9,7 @@ output: html_document
 source("../source/dynamic_summary.R")
 ```
 
-## What is this file for?
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
+```{r echo=FALSE}
 # Example 1: Note relative path, which can be read: Up one
 # directory(..), down into source (/source), and 
 # then "source" an R file (data_access.R)
@@ -25,34 +17,29 @@ source("../source/dynamic_summary.R")
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-### Example 2: Initialize a variable and then use it
+### MOST RECENT NATURAL DISASTERS FROM 1955-2016 PER STATE/TERRITORY 
 ```{r}
 # Example 1: This function was "sourced" above
-
+print(usa_table, n = 59)
 ```
+This table shows the most recent natural disasters in each of the 50 United States and territories ranging from the years 1955 to 2016. This data was sorted from the states and territories abbreviations in alphabetical order. This helps emphasize which states have been most vulnerable to natural disasters over the 61 year period. 
 
-the highest number is disasters was ```r get_max_deaths()```. the highest blah blah is . the other most thing is 
 
-## ABOUT THIS FILE: 
+### MOST DEATHS FROM A NATURAL DISASTER SINCE 1980
+The highest number of deaths from a natural disaster since 1980 was ```r get_max_deaths()```. ```r get_max_deaths()``` people died during Hurricane Maria in September of 2017. Hurricane Maria was a category 5 hurricane that affected most of the Caribbean including Dominica, Saint Croix, and Puerto Rico. It is estimated that Hurricane Maria costed over $90 Billion in monetary losses. 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-
-```
-
-## Including Plots
+## Natural Disasters in the United States of America
 
 ```{r pressure, echo=FALSE}
 plot(bp)
 ```
 
-This length encoding plot shows the leading 7 declared disasters in the US since 1953. It can be seen that Hurricanes and Floods are the leading disasters with a declaration amount of 8764, and 9317, respectively. The other sections include droughts, fires, ice, snow, and tornadoes. This plot is useful because it visually shows the gap there is in the amount of times certain disasters happen.
+This length encoding chart shows the leading seven types of declared disasters in the United States of America since 1953. It can be seen from the chart, that Hurricanes and Floods are the most prominent disasters since 1953 with a declaration amount of 8764, and 9317, respectively. The remaining five types of declared disasters include droughts, fires, ice, snow, and tornadoes. This plot is useful because it visually shows the gap there is in the amount of times certain disasters happen.
 
 ```{r echo=FALSE}
-
+plot(p)
 ```
+
+This bar graph depicts the top seven states where natural disasters have occurred most since 1953. It can be seen that Texas is clearly the leading state when it comes to natural disaster occurrences since then. Missouri, Kentucky, Virginia, Oklahoma, Iowa, and Georgia are the next 6 states in order where natural disasters have occurred the most.
 
 
