@@ -63,7 +63,7 @@ num_human_cause <- sum(str_detect(type_of_disaster, "Human Cause", negate = FALS
 #Total number of terrorist disasters 
 num_terrorism <- sum(str_detect(type_of_disaster, "Terrorism", negate = FALSE))
 
-#Total number of tsunmai disasters
+#Total number of tsunami disasters
 num_tsunami <- sum(str_detect(type_of_disaster, "Tsunami", negate = FALSE))
 
 usa_nd <- data.frame(
@@ -80,7 +80,6 @@ pie <- bp + coord_polar("y", start = 0)
 pie
 
 
- 
 
 
 
