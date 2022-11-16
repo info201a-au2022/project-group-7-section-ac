@@ -31,12 +31,14 @@ The highest number of deaths from a natural disaster since 1980 was ```r get_max
 ## Natural Disasters in the United States of America
 
 ```{r pressure, echo=FALSE}
+source("../source/Chart_1_Disasters.R")
 plot(bp)
 ```
 
 This length encoding chart shows the leading seven types of declared disasters in the United States of America since 1953. It can be seen from the chart, that Hurricanes and Floods are the most prominent disasters since 1953 with a declaration amount of 8764, and 9317, respectively. The remaining five types of declared disasters include droughts, fires, ice, snow, and tornadoes. This plot is useful because it visually shows the gap there is in the amount of times certain disasters happen.
 
 ```{r echo=FALSE}
+source("../source/Chart_2_States.R")
 plot(p)
 ```
 
