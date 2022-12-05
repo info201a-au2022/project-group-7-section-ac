@@ -90,5 +90,30 @@ server <- function(input, output) {
   output$testing_chart <- renderPlotly({
     barplot2()
   })
+  
+  #Creates new table of countries
+  agg_tbl3 <- new_dataset %>%
+    group_by(Country, Disaster.Type) %>%
+    summarise(Occurences = n())
+  
+  output$selectCountry <- renderUI({
+    selectInput("Countries", "Choose Country", choices = unique(agg_tbl3$Country))
+  })
+  
+  barplot3 <- reactive({
+    chartdata3 <- agg_tbl3 %>%
+      filter(Country %in% input$Countries)
+    
+    ggplot(chartdata3, aes(x = Disaster.Type, y = Occurences)) +
+      geom_col(aes(color = Country)) + 
+      labs(
+        x = "Different Disaster Types",
+        y = "Occurences",
+        title = "Disasters in Each Country")
+  })
+  
+  output$barchart3 <- renderPlotly({
+    barplot3()
+  })
 }
 

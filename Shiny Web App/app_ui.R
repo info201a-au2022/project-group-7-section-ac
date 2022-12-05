@@ -104,13 +104,14 @@ third_page <- tabPanel(
 #4th page, graph of costs
 
 fourth_page <- tabPanel(
-  titlePanel("Costs of Disasters"),
-  sidebarLayout(
-    mainPanel(
-      plotlyOutput("")
-    ),
+  "Disaster Types Dropdown",
+  mainPanel(
+    titlePanel("Disaster Types Dropdown"),
     sidebarPanel(
-      uiOutput("")
+      uiOutput("selectCountry")
+    ),
+    mainPanel(
+      plotlyOutput("barchart3")
     )
   )
 )
@@ -119,7 +120,8 @@ fourth_page <- tabPanel(
 ui <- navbarPage(
   "Natural Disasters Declarations",
   first_page,
-  third_page
+  third_page,
+  fourth_page
 )
 
 
