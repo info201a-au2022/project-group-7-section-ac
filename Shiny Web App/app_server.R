@@ -40,6 +40,7 @@ server <- function(input, output) {
     scatterplot
   })
   
+# Chart1  
   output$selectState <- renderUI({
     selectInput("States", "Choose State", choices = unique(agg_tbl$State))
   })
@@ -49,7 +50,7 @@ server <- function(input, output) {
       filter(State %in% input$States)
     
     ggplot(chartdata, aes(x = Disaster.Type, y = Occurences)) +
-      geom_col(aes(color = State)) +
+      geom_col(aes(color = Disaster.Type, fill = Disaster.Type)) +
       labs(
         x = "Different Disaster Types",
         y = "Occurences",
@@ -60,12 +61,14 @@ server <- function(input, output) {
     barplot()
   })
   
+#Image For Home Page 
   output$home_page <- renderImage({
     list(src = "natural_disasters_img.png",
          width = "100%",
          height = 350)
   },deleteFile = F)
-  
+
+#Chart2
   agg_tbl2 <- natural_disaster_declarations %>%
     group_by(Disaster.Type, Declaration.Date) %>%
     summarise(Frequency = n())
@@ -105,7 +108,7 @@ server <- function(input, output) {
       filter(Country %in% input$Countries)
     
     ggplot(chartdata3, aes(x = Disaster.Type, y = Occurences)) +
-      geom_col(aes(color = Country)) + 
+      geom_col(aes(color = Disaster.Type, fill = Disaster.Type)) + 
       labs(
         x = "Different Disaster Types",
         y = "Occurences",
