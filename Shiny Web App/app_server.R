@@ -47,11 +47,16 @@ server <- function(input, output) {
   })
   
   barplot <- reactive({
-    chartdata <- agg_tbl %>% 
-        filter(State %in% input$States)
+    chartdata <- agg_tbl %>%
+      filter(State %in% input$States)
     
-    ggplot(chartdata, aes(x = Disaster.Type, y = Occurences, color = Disaster.Type, fill = Disaster.Type)) +
+    chartdata1 <- chartdata %>%
+      arrange((Occurences), .by_group = TRUE)
+  
+    
+    ggplot(chartdata1, aes(x = reorder(Disaster.Type,-Occurences), y = Occurences, color = Disaster.Type, fill = Disaster.Type)) +
       geom_col(width = 1) +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
       labs(
         x = "Types of Natural Disasters",
         y = "Declarations",
@@ -108,8 +113,13 @@ server <- function(input, output) {
     chartdata3 <- agg_tbl3 %>%
       filter(Country %in% input$Countries)
     
-    ggplot(chartdata3, aes(x = Disaster.Type, y = Occurences)) +
+    chartdata4 <- chartdata3 %>%
+      arrange((Occurences), .by_group = TRUE)
+      
+    
+    ggplot(chartdata3, aes(x = reorder(Disaster.Type,-Occurences), y = Occurences)) +
       geom_col(aes(color = Disaster.Type, fill = Disaster.Type)) + 
+      theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
       labs(
         x = "Different Disaster Types",
         y = "Occurences",
