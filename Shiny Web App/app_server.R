@@ -123,7 +123,7 @@ server <- function(input, output) {
       labs(
         x = "Different Disaster Types",
         y = "Occurences",
-        title = "Disasters in Each Country")
+        title = "Declared Disasters By Each Country")
   })
   
   output$barchart3 <- renderPlotly({
