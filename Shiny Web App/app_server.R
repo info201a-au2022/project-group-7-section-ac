@@ -129,5 +129,32 @@ server <- function(input, output) {
   output$barchart3 <- renderPlotly({
     barplot3()
   })
+  
+  #Third graph
+  
+agg_tblWA <- natural_disaster_declarations %>%
+    group_by(Declaration.Date, Disaster.Type, State) %>%
+    filter("WA" %in% State) %>%
+    summarise(Occurences = n())
+  
+  output$selectWA <- renderUI({
+    selectInput("Disaster_Types", "Choose Disaster", choices = unique(agg_tblWA$Disaster.Type))
+  })
+  
+  barplot5 <- reactive({
+    chartdataWA <- agg_tblWA %>%
+      filter(Disaster.Type %in% input$Disaster_Types)
+    
+    ggplot(chartdataWA, aes(x = Declaration.Date, y = Occurences)) +
+      geom_point() + 
+      geom_line() + 
+      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  })
+  
+  output$barchart5 <- renderPlotly({
+    barplot5()
+  })
+  
+  
 }
 

@@ -91,16 +91,9 @@ most?" We came to this question because we were trying to figure out
 what dangerous disasters can happen near us and if there has been any
 record of it. Natural disasters do not come in any orderly manner so we
 were thinking of which states have the highest chance of having a
-natural disaster based on historical clues such as the datasets.
+natural disaster based on historical clues such as the data sets.
 
-Our last research question is "What natural disasters cost the most for
-repairs?" We were curious about this question because we found a dataset
-that provided the amount of money that went into repairs after the
-natural disasters struck. We think it would be interesting to see which
-disasters cost the most money to recover from and in turn, this will
-help us answer the question of "which disasters are the most dangerous?"
-Perhaps not meaning dangerous in the sense that they are the deadliest,
-but dangerous for the economy.
+Our last research question is "What natural disasters have been declared the most in Washington by county?" We came up with this research question because we thought that we should have a graph showing something localized. Having a data set that has information about the whole US as a country is helpful because we can filter out the state of Washington to get our information. 
 
 ## The Dataset
 
@@ -153,6 +146,8 @@ to create in terms of the website and the graphs.
 Our first research question was "what disasters have been declared the most in each state in the US?" To answer this, we are not going to go through all 50 states but we were able to get the answers from the graph that we have created. With the graph, it is possible to filter each and every state so that we can see which disasters have occurred in each state. For some states, it could be storms and in other states it could be floods. It is all dependent on location and situation but it would simply take too long to list out which is the top disaster for each and every state.
 
 Our second research question is "what disasters have been declared the most around the globe?" This is also another question that we can see through the graphs that we have created. Again, it is simply too much to list out the countries and which natural disasters have been declared the most in each and every one. However, we can say that there is not one specific disaster that is dominant across the globe in that every country has different disasters that are the top declared and each country has a different amount whereas some may be solely at the top and some may have one or more disasters at the top of their list. 
+
+Our last research question is "What disasters have been declared the most in Washington by county?" 
 
 ## Discussion
 While doing the project we have figured out a lot of new things about our topic. The importance of our data is that it will be able to be used for various things. With this project we have learned that there are a lot of disasters and that based on our data, the amount of disaster does not vary based on location. Of course we think location has a factor in the types of disasters but in terms of raw statistical data, the amount of disasters that happen is not patterned and we could not find a pattern for location and amount of disasters declared. In our summary takeaways page on the shiny app, we can see that the state of Colorado has many more disasters than that of the state of Alaska. This comes to show that the location of a state does not matter when it comes to natural disasters. There is no way we can predict which disasters will happen where with this data but there is a chance that someone who is viewing our website will be able to detect the risk factor of each state to see which states are safer from disasters than others. 

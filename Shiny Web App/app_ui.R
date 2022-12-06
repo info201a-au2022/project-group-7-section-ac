@@ -87,8 +87,8 @@ first_page <- tabPanel(
   p(strong("WHAT NATURAL DISASTERS HAVE BEEN DECLARED MOST IN COUNTRIES ACROSS THE GLOBE?")),
   p("This expands on the idea of our first research question. It's important to recognize what disasters are most common in places hundreds and thousands of miles away from the United States."),
   br(),
-  p(strong("WHAT NATURAL DISASTERS COST MOST FOR REPAIRS?")),
-  p("We were curious about this question because we found a dataset that provided the amount of money that went into repairs after the natural disasters struck. We think it would be interesting to see which disasters cost the most money to recover from and in turn, this will help us answer the question of “which disasters are the most dangerous?” Perhaps not meaning dangerous in the sense that they are the deadliest, but dangerous for the economy"),
+  p(strong("WHAT NATURAL DISASTERS HAVE BEEN DECLARED THE MOST IN WASHINGTON BY COUNTY?")),
+  p("This question is a little more specific than the rest of our questions. We wanted to do something that was localized because we think that there should be some data here that benefits us as Washington residents. "),
 ))
 
 #2nd Page, First graph of choosing x, y 
@@ -139,6 +139,22 @@ fourth_page <- tabPanel(
   )
 )
 
+fifth_page <- tabPanel(
+  "Declared Disasters by WA Counties",
+  mainPanel(
+    titlePanel("Declared Disasters by WA Counties on Specific Dates"),
+    sidebarPanel(
+      uiOutput("selectWA")
+    ),
+    mainPanel(
+      plotlyOutput("barchart5", width = 700, height = 500),
+      hr(),
+      h3(strong("About the Graph")),
+      p("This graph allows you to pick the type of disaster and then it will filter the graph showing the different amount of times the disaster has been declared as well as how many counties have declared the disaster on that specific date.")
+    )
+  )
+)
+  
 #Summary Page 
 summary_page <- tabPanel(
   "Summary Page",
@@ -184,8 +200,9 @@ ui <- navbarPage(
   theme = shinytheme("flatly"),
   "Natural Disasters Declarations",
   first_page,
-  third_page,
   fourth_page,
+  third_page,
+  fifth_page,
   summary_page,
   report_page
 )
