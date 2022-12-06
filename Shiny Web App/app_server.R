@@ -26,6 +26,7 @@ new_dataset <- read.csv("https://raw.githubusercontent.com/info201a-au2022/proje
 agg_tbl <- natural_disaster_declarations %>%
   group_by(State, Disaster.Type) %>%
   summarise(Occurences = n())
+    
 
 #Makes Charts
 server <- function(input, output) {
@@ -47,19 +48,19 @@ server <- function(input, output) {
   
   barplot <- reactive({
     chartdata <- agg_tbl %>% 
-      filter(State %in% input$States)
+        filter(State %in% input$States)
     
-    ggplot(chartdata, aes(x = Disaster.Type, y = Occurences)) +
-      geom_col(aes(color = Disaster.Type, fill = Disaster.Type)) +
+    ggplot(chartdata, aes(x = Disaster.Type, y = Occurences, color = Disaster.Type, fill = Disaster.Type)) +
+      geom_col(width = 1) +
       labs(
-        x = "Different Disaster Types",
-        y = "Occurences",
-        title = "Disasters in Each State")
+        x = "Types of Natural Disasters",
+        y = "Declarations",
+        title = "Declared Disasters by U.S State/Territory")
   })
   
   output$barchart <- renderPlotly({
     barplot()
-  })
+  }) 
   
 #Image For Home Page 
   output$home_page <- renderImage({
