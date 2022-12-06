@@ -60,6 +60,17 @@ sizes <- sliderInput(
 
 first_page <- tabPanel(
   "Project Overview",
+  sidebarPanel(
+    h1(strong("About Us")),
+    hr(),
+    h4("Rohith Sarma"),
+    p("rsarma18@uw.edu"),
+    br(),
+    h4("Darin Nguyen"),
+    p("dnguye0@uw.edu"),
+    br()
+  ),
+  mainPanel(
   imageOutput("home_page"),
   h2(strong("INTRODUCTION")),
   br(),
@@ -76,7 +87,7 @@ first_page <- tabPanel(
   br(),
   p(strong("WHAT NATURAL DISASTERS COST MOST FOR REPAIRS?")),
   p("We were curious about this question because we found a dataset that provided the amount of money that went into repairs after the natural disasters struck. We think it would be interesting to see which disasters cost the most money to recover from and in turn, this will help us answer the question of “which disasters are the most dangerous?” Perhaps not meaning dangerous in the sense that they are the deadliest, but dangerous for the economy"),
-)
+))
 
 #2nd Page, First graph of choosing x, y 
 
