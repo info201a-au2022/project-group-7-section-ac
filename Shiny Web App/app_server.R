@@ -22,7 +22,7 @@ new_dataset <- read.csv("https://raw.githubusercontent.com/info201a-au2022/proje
 # Define server logic required to draw a histogram
 # shinyServer(function(input, output) {
 
-# Makes table of each disaster in a state, and total occurences
+# Makes table of each disaster in a state, and total occurrences
 agg_tbl <- natural_disaster_declarations %>%
   group_by(State, Disaster.Type) %>%
   summarise(Occurences = n())
@@ -145,10 +145,9 @@ agg_tblWA <- natural_disaster_declarations %>%
     chartdataWA <- agg_tblWA %>%
       filter(Disaster.Type %in% input$Disaster_Types)
     
-    ggplot(chartdataWA, aes(x = Declaration.Date, y = Occurences)) +
+    ggplot(chartdataWA, aes(x = Declaration.Date, y = Occurences, color = Disaster.Type)) +
       geom_point() + 
-      geom_line() + 
-      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+      theme(axis.text.x = element_text(angle = 30, vjust = -1, hjust = 1))
   })
   
   output$barchart5 <- renderPlotly({
