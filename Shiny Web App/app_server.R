@@ -147,7 +147,8 @@ agg_tblWA <- natural_disaster_declarations %>%
     
     ggplot(chartdataWA, aes(x = Declaration.Date, y = Occurences, color = Disaster.Type)) +
       geom_point() + 
-      theme(axis.text.x = element_text(angle = 30, vjust = -1, hjust = 1))
+      theme(axis.text.x = element_text(angle = 30, vjust = -1, hjust = 1)) +
+      labs(x = "Dates", y = "Number of Declarations", title = "Declarations In Washington Counties Since 1953")
   })
   
   output$barchart5 <- renderPlotly({
