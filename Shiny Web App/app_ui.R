@@ -116,7 +116,7 @@ third_page <- tabPanel(
         plotlyOutput("barchart", width = 700, height = 500),
         hr(),
         h3(strong("About the Graph")),
-        p("This graph shows the different disasters that have happened in each state since 1953. The data is ordered so that the disaster that has appeared the most will be on the furthest left side of the graph and so on. ")
+        p("This graph shows the different disasters that have been declared in each state since 1953. The dropdown menu allows you to choose which state you want to see statistics for, and then produces a bargraph that shows what disasters have been declared for that specific state since 1953. The graph is formatted so that it shows the highest to lowest amount of occurrences for each type of disaster.")
       )
     )
   )
@@ -134,7 +134,7 @@ fourth_page <- tabPanel(
       plotlyOutput("barchart3", width = 700, height = 500),
       hr(),
       h3(strong("About the Graph")),
-      p("This graph is showing the different disasters that have been declared in the world since 1970. The dropdown menu will allow you to choose which country you want to see the statistics for and the graph will show you what has been declared for that specific country.")
+      p("This graph shows the different disasters that have been declared in the world since 1970. The dropdown menu allows you to choose which country you want to see statistics for, and then produces a bargraph that shows what disasters have been declared for that specific country since 1970. The graph is formatted so that it shows the highest to lowest amount of occurrences for each type of disaster.")
     )
   )
 )
@@ -142,15 +142,15 @@ fourth_page <- tabPanel(
 fifth_page <- tabPanel(
   "Declared Disasters by WA Counties",
   mainPanel(
-    titlePanel("Declared Disasters by WA Counties on Specific Dates"),
+    titlePanel("Declared Disasters By Washington Counties Since 1953"),
     sidebarPanel(
       uiOutput("selectWA")
     ),
     mainPanel(
-      plotlyOutput("barchart5", width = 700, height = 500),
+      plotlyOutput("barchart5", width = 900, height = 500),
       hr(),
       h3(strong("About the Graph")),
-      p("This graph allows you to pick the type of disaster and then it will filter the graph showing the different amount of times the disaster has been declared as well as how many counties have declared the disaster on that specific date.")
+      p("This graph shows the different disasters that have been declared in Washington state counties since 1953. The dropdown menu allows you to pick the type of disaster you want to see statistics for, and then produces a bargraph showing the different amount of times that disaster has been declared in Washington counties as well since 1953.")
     )
   )
 )
