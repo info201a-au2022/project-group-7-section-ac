@@ -5,9 +5,9 @@ account: nguyendarin
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 7834833
-bundleId: 6602735
+bundleId: 6612103
 url: https://nguyendarin.shinyapps.io/NaturalDisasterProjectRohithDarin/
-when: 1670388174.31527
-lastSyncTime: 1670388174.31529
+when: 1670530600.59545
+lastSyncTime: 1670530600.59546
 asMultiple: FALSE
 asStatic: FALSE
