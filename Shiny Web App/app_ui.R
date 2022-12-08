@@ -35,6 +35,14 @@ first_page <- tabPanel(
   h2(strong("ABSTRACT")),
   p("There are numerous types of natural disasters. They can range from earthquakes to droughts to fires, and everything in between. We feel that it’s important to identify which types of natural disasters occur most in countries around the world, states across America, and in Washington State. To address this question, we will wrangling datasets and creating visualizations to showcase this information."),
   hr(),
+  h2(strong("PROBLEM DOMAIN")),
+  h4(strong("PROJECT FRAMING")),
+  p("Our project will include creating a website that will have links to take you to different pages within the website which will then have different types of interactable graphs. The graphs will contain different information on what natural disasters are declared most in countries, states, and Washington state counties. Two important human values regarding natural disasters would be safety and environmental stability. Natural disasters such as earthquakes, tornados, mudslides, and tsunamis have all caused infrastructural damage, injuries, and deaths over time. It's important to understand what disasters occur most in what locations, so that we can take actions to best protect ourselves in these situations. Environmental stability is another human value that's important because natural disasters can have severe impacts across the globe. For example, earthquakes, tornados, and tsunamis can all negatively impact things like farmland and landscape."),
+  h4(strong("DIRECT AND INDIRECT STAKEHOLDERS")),
+  p("A direct stakeholder when it comes to this project focused on natural disasters would be an environmental scientist who uses the data we have organized in order to gain intel and then use it for decisions made in the future. An indirect stakeholder regarding natural disasters would be people/communities who are informed by government officials or environmental scientists on whether to relocate or take safety precautions in order to prepare for oncoming disasters."),
+  h4(strong("POSSIBLE HARMS AND BENEFITS")),
+  p("The only true harm we see with our project is if the data we collect is inaccurate since it would lead to people making wrong decisions and interpretations. There are many benefits to our project. People would be more informed about safety when it comes to natural disasters. People would be more informed about what disasters occur the most and in what areas they occur the most. Knowledge is key and we believe this project could help many realize the hazards we face and how we can be better prepared to deal with them in the future. This information could help to start a political movement in order to address important topics such as having better emergency procedures in certain locations and safer infrastructure developments."),
+  hr(),
   h2(strong("RESEARCH QUESTIONS")),
   br(),
   p(strong("WHAT NATURAL DISASTERS HAVE BEEN DECLARED MOST IN COUNTRIES ACROSS THE GLOBE?")),
@@ -45,6 +53,8 @@ first_page <- tabPanel(
   br(),
   p(strong("WHAT NATURAL DISASTERS HAVE BEEN DECLARED THE MOST IN WASHINGTON BY COUNTY?")),
   p("This question is a little more specific than the rest of our questions. We wanted to do something that was localized because we think that there should be some data here that benefits us as Washington residents. "),
+  h2(strong("THE DATASETS")),
+  p("The first dataset we have chosen to work with deal with declarations of all natural disasters in America ranging from 1953 to 2017. Another dataset we have chosen to work with deal with declarations of all natural disasters in different countries, ranging from 1970 to 2021. The third dataset deals with costs of repairs for numerous natural disasters that have occurred over the history. These datasets were found on kaggle and introduce a different aspects that we have used for this project."),
 ))
 
 #2nd page, bar chart of disasters declared in different countries since 1970
