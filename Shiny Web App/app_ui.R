@@ -1,15 +1,4 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-national_disaster_declaration <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-ac/main/data/Natural_Disaster_declaration.csv")
-billion_dollar_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-ac/main/data/Billion_Dollar_Weather_and_Climate_Disasters_Events_Aug_2021.csv")
-new_dataset <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-ac/main/data/1970-2021_DISASTERS.xlsx%20-%20emdat%20data.csv")
+#loading libraries
 
 library(shiny)
 library(dplyr)
@@ -17,44 +6,11 @@ library(plotly)
 library(ggplot2)
 library(shinythemes)
 
-#Inputs for the UI
-x_var <- colnames(national_disaster_declaration)
+#loading datasets
 
-y_var <- colnames(national_disaster_declaration)
-
-y_var_start <- national_disaster_declaration %>% 
-  group_by(Disaster.Type) %>% 
-  summarize(count=n())
-
-
-#X Input
-x_values <- selectInput(
-  "x_variable",
-  label = "X Variable",
-  selected = "Disaster.type",
-  choices = x_var
-)
-
-#Y Input
-y_values <- selectInput(
-  "y_variable",
-  label = "Y Variable",
-  selected = "count",
-  choices = y_var
-)
-
-#Colors
-colors <- selectInput(
-  "colors",
-  label = "Color of Graph",
-  choices = list("Blue" = "blue", "Green" = "green", "Orange" = "orange", "Black" = "black")
-)
-#Size Slider
-sizes <- sliderInput(
-  "size",
-  label = "Size of Points on the Graph", value = 5, max = 10, min = 1
-)
-
+natural_disaster_declarations <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-ac/main/data/Natural_Disaster_declaration.csv")
+billion_dollar_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-ac/main/data/Billion_Dollar_Weather_and_Climate_Disasters_Events_Aug_2021.csv")
+new_dataset <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-7-section-ac/main/data/1970-2021_DISASTERS.xlsx%20-%20emdat%20data.csv")
 
 #Introduction Page
 
@@ -91,39 +47,9 @@ first_page <- tabPanel(
   p("This question is a little more specific than the rest of our questions. We wanted to do something that was localized because we think that there should be some data here that benefits us as Washington residents. "),
 ))
 
-#2nd Page, First graph of choosing x, y 
+#2nd page, bar chart of disasters declared in different countries since 1970
 
 second_page <- tabPanel(
-  titlePanel("Natural Declarations"),
-  h1("Natural Disaster Declarations"),
-  x_values,
-  y_values,
-  colors,
-  sizes,
-  plotlyOutput("page_two")
-)
-
-#3rd page, state VS times happen, and type VS time happen, 2 graphs
-
-third_page <- tabPanel(
-  "Declared Disasters Domestically",
-  mainPanel(
-    titlePanel("Declared Disasters In The USA Since 1953"),
-      sidebarPanel(
-        uiOutput("selectState")
-      ),
-      mainPanel(
-        plotlyOutput("barchart", width = 700, height = 500),
-        hr(),
-        h3(strong("About the Graph")),
-        p("This graph shows the different disasters that have been declared in each state since 1953. The dropdown menu allows you to choose which state you want to see statistics for, and then produces a bargraph that shows what disasters have been declared for that specific state since 1953. The graph is formatted so that it shows the highest to lowest amount of occurrences for each type of disaster.")
-      )
-    )
-  )
-
-#4th page, graph of costs
-
-fourth_page <- tabPanel(
   "Declared Disasters Globally",
   mainPanel(
     titlePanel("Declared Disasters In The World Since 1970"),
@@ -139,7 +65,27 @@ fourth_page <- tabPanel(
   )
 )
 
-fifth_page <- tabPanel(
+#3rd page, bar chart of disasters declared in different American states since 1953
+
+third_page <- tabPanel(
+  "Declared Disasters Domestically",
+  mainPanel(
+    titlePanel("Declared Disasters In The USA Since 1953"),
+    sidebarPanel(
+      uiOutput("selectState")
+    ),
+    mainPanel(
+      plotlyOutput("barchart", width = 700, height = 500),
+      hr(),
+      h3(strong("About the Graph")),
+      p("This graph shows the different disasters that have been declared in each state since 1953. The dropdown menu allows you to choose which state you want to see statistics for, and then produces a bargraph that shows what disasters have been declared for that specific state since 1953. The graph is formatted so that it shows the highest to lowest amount of occurrences for each type of disaster.")
+    )
+  )
+)
+
+#Fourth page, scatter plot of disasters declared in WA counties on a certain date
+
+fourth_page <- tabPanel(
   "Declared Disasters by WA Counties",
   mainPanel(
     titlePanel("Declared Disasters By Washington Counties Since 1953"),
@@ -156,6 +102,7 @@ fifth_page <- tabPanel(
 )
   
 #Summary Page 
+
 summary_page <- tabPanel(
   "Summary Page",
   mainPanel(
@@ -167,6 +114,7 @@ summary_page <- tabPanel(
 )
 
 #Report Page
+
 report_page <- tabPanel(
   "Report Page",
   mainPanel(
@@ -183,26 +131,24 @@ report_page <- tabPanel(
     p("The only true harm we see with our project is if the data we collect is inaccurate since it would lead to people making wrong decisions and interpretations. There are many benefits to our project. People would be more informed about safety when it comes to natural disasters. People would be more informed about what disasters occur the most and in what areas they occur the most. Knowledge is key and we believe this project could help many realize the hazards we face and how we can be better prepared to deal with them in the future. This information could help to start a political movement in order to address important topics such as having better emergency procedures in certain locations and safer infrastructure developments."),
     hr(),
     h3("The Datasets"),
-    p("The datasets we have chosen to work with deal with declarations of all natural disasters ranging from 1970 to 2016. The datasets were found on kaggle and introduce a few different aspects that we have used for this project. Our next dataset was also found on kaggle and we used this dataset to filter out all of the different states as well as the types of disasters that have happened in the US."),
+    p("The first dataset we have chosen to work with deal with declarations of all natural disasters in America ranging from 1953 to 2017. Another dataset we have chosen to work with deal with declarations of all natural disasters in different countries, ranging from 1970 to 2021. These datasets were found on kaggle and introduce a few different aspects that we have used for this project."),
     hr(),
     h3("Expected Limitations"),
-    p("Implications for people who choose to use our website will be that they will be able to look at the data and create ideas for what to do if a certain natural disaster happens. It will also assist them in trying to focus on a certain disaster over another. Using our graphs and data, they will be able to dictate which disasters they should create policies for a designer on how to create buildings in the area for a certain type of disaster if they are more prone to it. We think our graphs and data will help to create a sense of urgency and preparation needed for certain groups of individuals."),
+    p("Implications for people who choose to use our website will be that they will be able to look at the data and create ideas for what to do if a certain natural disaster happens. It will also assist them in trying to focus on a certain disaster over another. Using our graphs and data, they will be able to dictate which disasters they should create emergency policies in areas that are prone for a certain type of disaster. We think our graphs and data will help to create a sense of urgency and preparation needed for certain groups of individuals."),
     hr(),
     h3("Limitations"),
     p("Our limitations consist of any coding that we may not learn how to do over the course of the quarter. Limitations will also be if we cannot find any data sets to support our research questions well enough. For example, if there is something we have not learned to code in, then we would not be able to add it to the website despite our understanding and ideas for the topic. This will limit us to only create what we know how to create in terms of the website and the graphs."),
     hr(),
-    
   )
 )
-
 
 ui <- navbarPage(
   theme = shinytheme("flatly"),
   "Natural Disasters Declarations",
   first_page,
-  fourth_page,
+  second_page,
   third_page,
-  fifth_page,
+  fourth_page,
   summary_page,
   report_page
 )
