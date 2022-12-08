@@ -1,13 +1,10 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
 
-Earth and Food \# Climate Change and Our Food \#### Logan Winstel, Darin
-Nguyen, Rohith Sarma \#### INFO-201: Technical Foundations of
-Informatics - The Information School - University of Washington \####
-Autumn 2022 \## Abstract\
+# Earth and Food \
+## Climate Change and Our Food \
+#### Darin Nguyen, Rohith Sarma \
+#### INFO-201: Technical Foundations of Informatics - The Information School - University of Washington 
+#### Autumn 2022 
+## Abstract
 Natural disasters can be devastating for a country. There are numerous
 types of natural disasters. They can range from earthquakes to droughts
 to fires, and everything in between. We feel that it's important to
@@ -33,7 +30,7 @@ items to showcase this information. This helps us identify the natural
 disasters that are the most prevalent in this country as well as what
 individual states are the most vulnerable to certain natural disasters.
 
-## Problem Domain (needs three citations and recommends a figure)
+## Problem Domain
 
 #### Project Framing
 
@@ -41,7 +38,9 @@ Our project will include creating a website that will have links to take
 you to different pages within the website which will then have different
 types of interactable graphs. The graphs will contain different effects
 natural disasters have on the world such as crop production, climate
-change, and malnutrition. \#### Human Values Two important human values
+change, and malnutrition. 
+
+#### Human Values Two important human values
 regarding natural disasters would be safety and environmental stability.
 Natural disasters such as earthquakes, tornados, mudslides, and tsunamis
 have all caused infrastructural damage, injuries, and deaths over time.
